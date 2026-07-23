@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/ce_background"
+    android:fillViewport="true"
+    tools:theme="@style/Theme.ChiriquiEats">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="20dp">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Completar pago"
+            android:textColor="@color/ce_text"
+            android:textSize="24sp"
+            android:textStyle="bold" />
+
+        <EditText
+            android:id="@+id/input_yappy_code"
+            android:layout_width="match_parent"
+            android:layout_height="54dp"
+            android:layout_marginTop="18dp"
+            android:background="@drawable/bg_input"
+            android:hint="Código de Yappy"
+            android:inputType="number"
+            android:paddingStart="14dp"
+            android:paddingEnd="14dp"
+            android:textColor="@color/ce_text"
+            android:textColorHint="@color/ce_muted" />
+
+        <EditText
+            android:id="@+id/input_origin_number"
+            android:layout_width="match_parent"
+            android:layout_height="54dp"
+            android:layout_marginTop="12dp"
+            android:background="@drawable/bg_input"
+            android:hint="Número de origen"
+            android:inputType="phone"
+            android:paddingStart="14dp"
+            android:paddingEnd="14dp"
+            android:textColor="@color/ce_text"
+            android:textColorHint="@color/ce_muted" />
+
+        <EditText
+            android:id="@+id/input_destination_number"
+            android:layout_width="match_parent"
+            android:layout_height="54dp"
+            android:layout_marginTop="12dp"
+            android:background="@drawable/bg_input"
+            android:hint="Número de destino"
+            android:inputType="phone"
+            android:paddingStart="14dp"
+            android:paddingEnd="14dp"
+            android:textColor="@color/ce_text"
+            android:textColorHint="@color/ce_muted" />
+
+        <EditText
+            android:id="@+id/input_payment_amount"
+            android:layout_width="match_parent"
+            android:layout_height="54dp"
+            android:layout_marginTop="12dp"
+            android:background="@drawable/bg_input"
+            android:hint="Monto"
+            android:inputType="numberDecimal"
+            android:paddingStart="14dp"
+            android:paddingEnd="14dp"
+            android:textColor="@color/ce_text"
+            android:textColorHint="@color/ce_muted" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:background="@drawable/bg_input"
+            android:orientation="vertical"
+            android:padding="14dp">
+
+            <TextView
+                android:id="@+id/text_receipt_hint"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Adjuntar imagen de la galería"
+                android:textColor="@color/ce_muted"
+                android:textSize="15sp" />
+
+            <ImageView
+                android:id="@+id/image_receipt_preview"
+                android:layout_width="match_parent"
+                android:layout_height="480dp"
+                android:layout_marginTop="12dp"
+                android:adjustViewBounds="true"
+                android:background="@drawable/bg_table_placeholder"
+                android:contentDescription="Vista previa de imagen adjunta"
+                android:scaleType="centerCrop"
+                android:visibility="gone" />
+
+            <Button
+                android:id="@+id/button_attach_receipt"
+                android:layout_width="match_parent"
+                android:layout_height="54dp"
+                android:layout_marginTop="12dp"
+                android:backgroundTint="@color/ce_orange"
+                android:text="Seleccionar imagen"
+                android:textAllCaps="false"
+                android:textColor="@android:color/white"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/button_complete_order"
+            android:layout_width="match_parent"
+            android:layout_height="54dp"
+            android:layout_marginTop="22dp"
+            android:backgroundTint="@color/ce_green"
+            android:text="Completar pedido"
+            android:textAllCaps="false"
+            android:textColor="@android:color/white"
+            android:textSize="16sp"
+            android:textStyle="bold" />
+    </LinearLayout>
+</ScrollView>

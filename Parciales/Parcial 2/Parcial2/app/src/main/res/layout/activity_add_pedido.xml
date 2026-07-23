@@ -1,0 +1,310 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/snow"
+    android:fillViewport="true">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp" >
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Realizar un pedido"
+        android:textColor="@color/mahogany"
+        android:textSize="24sp"
+        android:textStyle="bold" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="18dp"
+            android:orientation="horizontal">
+
+            <View
+                android:layout_width="wrap_content"
+                android:layout_height="2dp"
+                android:layout_gravity="center"
+                android:background="@drawable/bg_divider"
+                android:layout_weight="1"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="16dp"
+                android:paddingStart="4dp"
+                android:paddingEnd="4dp"
+                android:text="Detalles del cliente"
+                android:textSize="12sp"
+                android:textColor="@color/grey" />
+
+            <View
+                android:layout_width="wrap_content"
+                android:layout_height="2dp"
+                android:layout_gravity="center"
+                android:background="@drawable/bg_divider"
+                android:layout_weight="1"/>
+        </LinearLayout>
+
+        <EditText
+            android:id="@+id/et_direccion"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:layout_marginTop="12dp"
+            android:background="@drawable/bg_input"
+            android:hint="Dirección de entrega"
+            android:textSize="16sp"
+            android:paddingStart="14dp"
+            android:paddingEnd="14dp"
+            android:inputType="text"
+            android:textColor="@color/black"
+            android:textColorHint="@color/grey" />
+
+        <EditText
+            android:id="@+id/et_contact"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:layout_marginTop="12dp"
+            android:background="@drawable/bg_input"
+            android:hint="Teléfono de contacto"
+            android:textSize="16sp"
+            android:paddingStart="14dp"
+            android:paddingEnd="14dp"
+            android:inputType="phone"
+            android:textColor="@color/black"
+            android:textColorHint="@color/grey" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="18dp"
+            android:orientation="horizontal">
+
+            <View
+                android:layout_width="wrap_content"
+                android:layout_height="2dp"
+                android:layout_gravity="center"
+                android:background="@drawable/bg_divider"
+                android:layout_weight="1"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="16dp"
+                android:paddingStart="4dp"
+                android:paddingEnd="4dp"
+                android:text="Detalles del pedido"
+                android:textSize="12sp"
+                android:textColor="@color/grey" />
+
+            <View
+                android:layout_width="wrap_content"
+                android:layout_height="2dp"
+                android:layout_gravity="center"
+                android:background="@drawable/bg_divider"
+                android:layout_weight="1"/>
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:text="Máximo 3 menús (20 unidades c/u):"
+            android:textColor="@color/black"
+            android:textSize="16sp"
+            android:paddingStart="6dp" />
+
+        <LinearLayout
+            android:id="@+id/layout_menu1_pedido"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:orientation="horizontal"
+            android:visibility="visible">
+
+            <Spinner
+                android:id="@+id/spn_menu1_pedido"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:layout_weight="1"
+                android:background="@drawable/bg_input"
+                android:paddingStart="14dp"
+                android:paddingEnd="14dp" />
+
+            <EditText
+                android:id="@+id/et_menu1_pedido"
+                android:layout_width="72dp"
+                android:layout_height="48dp"
+                android:layout_marginStart="4dp"
+                android:gravity="center"
+                android:hint="QTY"
+                android:textSize="16sp"
+                android:textColor="@color/black"
+                android:inputType="number"
+                android:digits="0123456789"
+                android:background="@drawable/bg_input" />
+
+            <ImageButton
+                android:id="@+id/btn_menu1_pedido"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_marginStart="4dp"
+                android:src="@drawable/vc_add"
+                android:background="@drawable/btn_round"
+                android:layout_gravity="center"
+                android:enabled="false"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/layout_menu2_pedido"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:orientation="horizontal"
+            android:visibility="gone">
+
+            <Spinner
+                android:id="@+id/spn_menu2_pedido"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:layout_weight="1"
+                android:background="@drawable/bg_input"
+                android:paddingStart="14dp"
+                android:paddingEnd="14dp" />
+
+            <EditText
+                android:id="@+id/et_menu2_pedido"
+                android:layout_width="72dp"
+                android:layout_height="48dp"
+                android:layout_marginStart="4dp"
+                android:gravity="center"
+                android:hint="QTY"
+                android:textSize="16sp"
+                android:textColor="@color/black"
+                android:inputType="number"
+                android:digits="0123456789"
+                android:background="@drawable/bg_input" />
+
+            <ImageButton
+                android:id="@+id/btn_menu2_pedido"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_marginStart="4dp"
+                android:src="@drawable/vc_add"
+                android:background="@drawable/btn_round"
+                android:layout_gravity="center"
+                android:enabled="false"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/layout_menu3_pedido"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:orientation="horizontal"
+            android:visibility="gone">
+
+            <Spinner
+                android:id="@+id/spn_menu3_pedido"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:layout_weight="1"
+                android:background="@drawable/bg_input"
+                android:paddingStart="14dp"
+                android:paddingEnd="14dp" />
+
+            <EditText
+                android:id="@+id/et_menu3_pedido"
+                android:layout_width="72dp"
+                android:layout_height="48dp"
+                android:layout_marginStart="4dp"
+                android:gravity="center"
+                android:hint="QTY"
+                android:textSize="16sp"
+                android:textColor="@color/black"
+                android:inputType="number"
+                android:digits="0123456789"
+                android:background="@drawable/bg_input" />
+
+            <ImageButton
+                android:id="@+id/btn_menu3_pedido"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_marginStart="4dp"
+                android:src="@drawable/vc_remove"
+                android:background="@drawable/btn_round"
+                android:layout_gravity="center"
+                android:enabled="false"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="32dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="48dp"
+                android:gravity="center_vertical"
+                android:text="Subtotal: "
+                android:textSize="24sp"
+                android:textStyle="normal"
+                android:textColor="@color/grey"
+                android:layout_weight="1" />
+
+            <EditText
+                android:id="@+id/et_subtotal"
+                android:layout_width="100dp"
+                android:layout_height="48dp"
+                android:background="@drawable/bg_input"
+                android:text="0.00"
+                android:textColor="@color/black"
+                android:gravity="center"
+                android:textSize="16sp"
+                android:enabled="false" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="48dp"
+                android:gravity="center_vertical"
+                android:text="Envío: "
+                android:textSize="24sp"
+                android:textStyle="normal"
+                android:textColor="@color/grey"
+                android:layout_weight="1" />
+
+            <EditText
+                android:id="@+id/et_envio"
+                android:layout_width="100dp"
+                android:layout_height="48dp"
+                android:background="@drawable/bg_input"
+                android:text="0.00"
+                android:textColor="@color/black"
+                android:gravity="center"
+                android:textSize="16sp"
+                android:enabled="false" />
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/btn_createPedido"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:text="Continuar con el pago"
+            android:textSize="16sp"
+            android:textColor="@color/white"
+            android:textStyle="bold"
+            android:backgroundTint="@color/scarlet" />
+    </LinearLayout>
+
+</ScrollView>

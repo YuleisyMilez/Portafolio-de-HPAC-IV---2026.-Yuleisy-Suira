@@ -1,0 +1,27 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Base.Theme.SucesosYmAS" parent="Theme.Material3.DayNight.NoActionBar">
+        <!-- Customize your light theme here. -->
+        <item name="colorPrimary">@color/blueNavy</item>
+        <item name="colorPrimaryVariant"> @color/blueNavy2</item>
+        <item name="colorOnPrimary">@color/blue_light</item>
+
+        <!--Secondary brand color -->
+        <item name="colorSecondary">@color/teal_200</item>
+        <item name="colorSecondaryVariant">@color/teal_700</item>
+        <item name="colorOnSecondary">@color/black</item>
+
+        <!--Status bar color-->
+        <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimaryVariant</item>
+
+    </style>
+
+    <style name="bottom_navigation">
+        <item name="android:background">@color/blue_light</item>
+        <item name="itemIconTint">@color/blueNavy</item>
+        <item name="itemTextColor">@color/white</item>
+    </style>
+
+    <style name="Theme.SucesosYmAS" parent="Base.Theme.SucesosYmAS" />
+
+</resources>

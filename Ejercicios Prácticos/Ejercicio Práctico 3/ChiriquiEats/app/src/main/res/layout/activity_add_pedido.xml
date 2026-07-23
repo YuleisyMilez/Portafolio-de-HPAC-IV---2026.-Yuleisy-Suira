@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/ce_background"
+    android:fillViewport="true"
+    tools:theme="@style/Theme.ChiriquiEats">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="20dp">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Añadir pedido"
+            android:textColor="@color/ce_text"
+            android:textSize="24sp"
+            android:textStyle="bold" />
+
+        <EditText
+            android:id="@+id/input_pedido_nombre"
+            android:layout_width="match_parent"
+            android:layout_height="54dp"
+            android:layout_marginTop="18dp"
+            android:background="@drawable/bg_input"
+            android:hint="Nombre"
+            android:inputType="textCapWords"
+            android:paddingStart="14dp"
+            android:paddingEnd="14dp"
+            android:textColor="@color/ce_text"
+            android:textColorHint="@color/ce_muted" />
+
+        <EditText
+            android:id="@+id/input_pedido_direccion"
+            android:layout_width="match_parent"
+            android:layout_height="54dp"
+            android:layout_marginTop="12dp"
+            android:background="@drawable/bg_input"
+            android:hint="Dirección de envío"
+            android:inputType="textPostalAddress"
+            android:paddingStart="14dp"
+            android:paddingEnd="14dp"
+            android:textColor="@color/ce_text"
+            android:textColorHint="@color/ce_muted" />
+
+        <Spinner
+            android:id="@+id/spinner_pedido_empresa"
+            android:layout_width="match_parent"
+            android:layout_height="54dp"
+            android:layout_marginTop="12dp"
+            android:background="@drawable/bg_selector"
+            android:paddingStart="14dp"
+            android:paddingEnd="14dp" />
+
+        <Spinner
+            android:id="@+id/spinner_pedido_menu"
+            android:layout_width="match_parent"
+            android:layout_height="54dp"
+            android:layout_marginTop="12dp"
+            android:background="@drawable/bg_selector"
+            android:paddingStart="14dp"
+            android:paddingEnd="14dp" />
+
+        <TextView
+            android:id="@+id/text_menu_content_preview"
+            android:layout_width="match_parent"
+            android:layout_height="110dp"
+            android:layout_marginTop="12dp"
+            android:background="@drawable/bg_input"
+            android:gravity="top|start"
+            android:padding="14dp"
+            android:text="Contenido del menú"
+            android:textColor="@color/ce_muted"
+            android:textSize="15sp" />
+
+        <EditText
+            android:id="@+id/input_monto_envio"
+            android:layout_width="match_parent"
+            android:layout_height="54dp"
+            android:layout_marginTop="12dp"
+            android:background="@drawable/bg_input"
+            android:hint="Monto de envío"
+            android:inputType="numberDecimal"
+            android:paddingStart="14dp"
+            android:paddingEnd="14dp"
+            android:textColor="@color/ce_text"
+            android:textColorHint="@color/ce_muted" />
+
+        <Button
+            android:id="@+id/button_continue_payment"
+            android:layout_width="match_parent"
+            android:layout_height="54dp"
+            android:layout_marginTop="22dp"
+            android:backgroundTint="@color/ce_green"
+            android:text="Continuar con el pago"
+            android:textAllCaps="false"
+            android:textColor="@android:color/white"
+            android:textSize="16sp"
+            android:textStyle="bold" />
+    </LinearLayout>
+</ScrollView>

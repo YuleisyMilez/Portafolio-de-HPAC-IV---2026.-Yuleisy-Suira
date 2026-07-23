@@ -1,0 +1,23 @@
+<resources>
+    <string name="app_name">Chiriqui Eats</string>
+    <string name="tab_empresas">Empresas</string>
+    <string name="tab_menu">Menú</string>
+    <string name="tab_pedidos">Pedidos</string>
+
+    <string-array name="empresas_selector_options">
+        <item>Seleccione una empresa</item>
+    </string-array>
+
+    <string-array name="menu_selector_options">
+        <item>Seleccione un menú</item>
+    </string-array>
+
+    <string-array name="categorias_empresa_options">
+        <item>Comida rápida</item>
+        <item>Cafetería</item>
+        <item>Comida italiana</item>
+        <item>Heladería</item>
+        <item>Comida asiática</item>
+        <item>Otras</item>
+    </string-array>
+</resources>

@@ -1,0 +1,35 @@
+<resources>
+    <style name="Theme.ChiriquiEats" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <item name="colorPrimary">@color/ce_green</item>
+        <item name="colorPrimaryDark">@color/ce_green_dark</item>
+        <item name="colorAccent">@color/ce_orange</item>
+        <item name="colorOnPrimary">@android:color/white</item>
+        <item name="colorSecondary">@color/ce_orange</item>
+        <item name="colorOnSecondary">@android:color/white</item>
+        <item name="android:colorAccent">@color/ce_orange</item>
+        <item name="android:fontFamily">sans-serif</item>
+        <item name="android:navigationBarColor">@color/ce_surface</item>
+        <item name="android:windowLightNavigationBar">true</item>
+        <item name="android:windowBackground">@color/ce_background</item>
+    </style>
+
+    <style name="ReadOnlyValue">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">54dp</item>
+        <item name="android:layout_marginTop">4dp</item>
+        <item name="android:background">@drawable/bg_input</item>
+        <item name="android:gravity">center_vertical</item>
+        <item name="android:paddingStart">14dp</item>
+        <item name="android:paddingEnd">14dp</item>
+        <item name="android:textColor">@color/ce_text</item>
+        <item name="android:textColorHint">@color/ce_muted</item>
+        <item name="android:textSize">15sp</item>
+    </style>
+
+    <style name="ReadOnlyValueLarge" parent="ReadOnlyValue">
+        <item name="android:layout_height">110dp</item>
+        <item name="android:gravity">top|start</item>
+        <item name="android:paddingTop">14dp</item>
+        <item name="android:paddingBottom">14dp</item>
+    </style>
+</resources>

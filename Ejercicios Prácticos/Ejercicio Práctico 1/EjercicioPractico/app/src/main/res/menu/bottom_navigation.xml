@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/clientes"
+        android:icon="@drawable/clients"
+        android:title="Clientes" />
+
+    <item
+        android:id="@+id/servicios"
+        android:icon="@drawable/services"
+        android:title="Servicios" />
+
+    <item
+        android:id="@+id/inicio"
+        android:icon="@drawable/home_24dp_e3e3e3_fill0_wght400_grad0_opsz24"
+        android:title="Inicio" />
+
+    <item
+        android:id="@+id/ubicacion"
+        android:icon="@drawable/location"
+        android:title="Ubicación" />
+
+    <item
+        android:id="@+id/contacto"
+        android:icon="@drawable/contacts"
+        android:title="Contacto"/>
+
+</menu>

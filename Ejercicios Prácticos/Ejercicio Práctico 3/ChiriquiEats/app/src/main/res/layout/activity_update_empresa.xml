@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/ce_background"
+    android:fillViewport="true"
+    tools:theme="@style/Theme.ChiriquiEats">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="20dp">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Actualizar empresa"
+            android:textColor="@color/ce_text"
+            android:textSize="24sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="RUC:"
+            android:textColor="@color/ce_text"
+            android:layout_marginTop="18dp"
+            android:paddingStart="6dp" />
+
+        <EditText
+            android:id="@+id/input_update_ruc"
+            android:layout_width="match_parent"
+            android:layout_height="54dp"
+            android:layout_marginTop="4dp"
+            android:background="@drawable/bg_input"
+            android:hint="RUC"
+            android:inputType="text"
+            android:paddingStart="14dp"
+            android:paddingEnd="14dp"
+            android:textColor="@color/ce_text"
+            android:textColorHint="@color/ce_muted" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Nombre:"
+            android:textColor="@color/ce_text"
+            android:layout_marginTop="12dp"
+            android:paddingStart="6dp" />
+
+        <EditText
+            android:id="@+id/input_update_nombre"
+            android:layout_width="match_parent"
+            android:layout_height="54dp"
+            android:layout_marginTop="4dp"
+            android:background="@drawable/bg_input"
+            android:hint="Nombre"
+            android:inputType="textCapWords"
+            android:paddingStart="14dp"
+            android:paddingEnd="14dp"
+            android:textColor="@color/ce_text"
+            android:textColorHint="@color/ce_muted" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Dirección:"
+            android:textColor="@color/ce_text"
+            android:layout_marginTop="12dp"
+            android:paddingStart="6dp" />
+
+        <EditText
+            android:id="@+id/input_update_direccion"
+            android:layout_width="match_parent"
+            android:layout_height="54dp"
+            android:layout_marginTop="4dp"
+            android:background="@drawable/bg_input"
+            android:hint="Dirección"
+            android:inputType="textPostalAddress"
+            android:paddingStart="14dp"
+            android:paddingEnd="14dp"
+            android:textColor="@color/ce_text"
+            android:textColorHint="@color/ce_muted" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Teléfono:"
+            android:textColor="@color/ce_text"
+            android:layout_marginTop="12dp"
+            android:paddingStart="6dp" />
+
+        <EditText
+            android:id="@+id/input_update_telefono"
+            android:layout_width="match_parent"
+            android:layout_height="54dp"
+            android:layout_marginTop="4dp"
+            android:background="@drawable/bg_input"
+            android:hint="Teléfono"
+            android:inputType="phone"
+            android:paddingStart="14dp"
+            android:paddingEnd="14dp"
+            android:textColor="@color/ce_text"
+            android:textColorHint="@color/ce_muted" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Correo:"
+            android:textColor="@color/ce_text"
+            android:layout_marginTop="12dp"
+            android:paddingStart="6dp" />
+
+        <EditText
+            android:id="@+id/input_update_correo"
+            android:layout_width="match_parent"
+            android:layout_height="54dp"
+            android:layout_marginTop="4dp"
+            android:background="@drawable/bg_input"
+            android:hint="Correo"
+            android:inputType="textEmailAddress"
+            android:paddingStart="14dp"
+            android:paddingEnd="14dp"
+            android:textColor="@color/ce_text"
+            android:textColorHint="@color/ce_muted" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Categoría:"
+            android:textColor="@color/ce_text"
+            android:layout_marginTop="18dp"
+            android:paddingStart="6dp" />
+
+        <Spinner
+            android:id="@+id/spinner_update_categoria_empresa"
+            android:layout_width="match_parent"
+            android:layout_height="54dp"
+            android:layout_marginTop="4dp"
+            android:background="@drawable/bg_selector"
+            android:paddingStart="14dp"
+            android:paddingEnd="14dp" />
+
+        <Button
+            android:id="@+id/button_update_empresa"
+            android:layout_width="match_parent"
+            android:layout_height="54dp"
+            android:layout_marginTop="22dp"
+            android:backgroundTint="@color/ce_green"
+            android:text="Actualizar"
+            android:textAllCaps="false"
+            android:textColor="@android:color/white"
+            android:textSize="16sp"
+            android:textStyle="bold" />
+
+        <Button
+            android:id="@+id/button_delete_empresa"
+            android:layout_width="match_parent"
+            android:layout_height="54dp"
+            android:layout_marginTop="12dp"
+            android:backgroundTint="#B3261E"
+            android:text="Borrar"
+            android:textAllCaps="false"
+            android:textColor="@android:color/white"
+            android:textSize="16sp"
+            android:textStyle="bold" />
+    </LinearLayout>
+</ScrollView>

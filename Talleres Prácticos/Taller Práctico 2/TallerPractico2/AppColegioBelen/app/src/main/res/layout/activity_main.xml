@@ -1,0 +1,203 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/fondo"
+    tools:context=".MainActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:background="#f3f3f7"
+        android:gravity="center"
+        android:orientation="horizontal" >
+
+        <!--ImageView del logo del colegio-->
+        <ImageView
+            android:layout_width="90dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="start"
+            android:padding="5dp"
+            android:src="@mipmap/logo_foreground" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="MultiCálculo"
+            android:textColor="#020d43"
+            android:layout_gravity="center|start"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="10dp"
+            android:textSize="24dp"
+            android:textStyle="bold"
+            android:fontFamily="monospace" />
+
+        <!--ImageView del logo de la compañia-->
+        <ImageView
+            android:layout_width="90dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="start"
+            android:padding="5dp"
+            android:src="@mipmap/logo_comp_foreground"/>
+
+    </LinearLayout>
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="360dp"
+        android:layout_height="660dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="120dp"
+        app:cardCornerRadius="24dp" >
+
+
+        <!--INPUT VALUES-->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Valor 1:"
+            android:textColor="#020d43"
+            android:layout_marginTop="50dp"
+            android:layout_marginStart="30dp"
+            android:textSize="20sp"
+            android:fontFamily="sans-serif-condensed-medium" />
+
+        <EditText
+            android:id="@+id/valor1"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="87dp"
+            android:layout_marginStart="30dp"
+            android:hint="Ingrese el primer valor"
+            android:maxLength="20"
+            android:background="@drawable/contenedor"
+            android:padding="10dp"
+            android:inputType="numberSigned|numberDecimal" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Valor 2:"
+            android:textColor="#020d43"
+            android:layout_marginStart="30dp"
+            android:layout_marginTop="170dp"
+            android:textSize="20sp"
+            android:fontFamily="sans-serif-condensed-medium"/>
+
+        <EditText
+            android:id="@+id/valor2"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="207dp"
+            android:layout_marginStart="30dp"
+            android:hint="Ingrese el segundo valor"
+            android:maxLength="20"
+            android:background="@drawable/contenedor"
+            android:padding="10dp"
+            android:inputType="numberSigned|numberDecimal" />
+
+        <!--ARITHMETIC OPERATION BUTTONS-->
+        <Button
+            android:layout_width="135dp"
+            android:layout_height="75dp"
+            android:layout_marginStart="30dp"
+            android:layout_marginTop="270dp"
+            android:text="+"
+            android:textSize="30dp"
+            android:backgroundTint="#2a49a2"
+            android:id="@+id/suma" />
+
+        <Button
+            android:layout_width="135dp"
+            android:layout_height="75dp"
+            android:layout_marginStart="200dp"
+            android:layout_marginTop="270dp"
+            android:text="-"
+            android:textSize="30dp"
+            android:backgroundTint="#2a49a2"
+            android:padding="5dp"
+            android:id="@+id/minus" />
+
+        <Button
+            android:layout_width="135dp"
+            android:layout_height="75dp"
+            android:layout_marginStart="30dp"
+            android:layout_marginTop="350dp"
+            android:text="x"
+            android:textSize="30dp"
+            android:backgroundTint="#2a49a2"
+            android:padding="5dp"
+            android:id="@+id/multi" />
+
+        <Button
+            android:layout_width="135dp"
+            android:layout_height="75dp"
+            android:layout_marginStart="200dp"
+            android:layout_marginTop="350dp"
+            android:text="÷"
+            android:textSize="30dp"
+            android:backgroundTint="#2a49a2"
+            android:padding="5dp"
+            android:id="@+id/div" />
+
+        <Button
+            android:layout_width="305dp"
+            android:layout_height="60dp"
+            android:layout_marginStart="30dp"
+            android:layout_marginTop="430dp"
+            android:text="AC"
+            android:textSize="30dp"
+            android:backgroundTint="#FCC650"
+            android:padding="5dp"
+            android:id="@+id/clear" />
+
+        <!--OUTPUT VALUE-->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Resultado:"
+            android:textColor="#020d43"
+            android:layout_marginStart="30dp"
+            android:layout_marginTop="520dp"
+            android:textSize="20sp"
+            android:fontFamily="sans-serif-condensed-medium"/>
+
+        <TextView
+            android:id="@+id/Resultado"
+            android:layout_width="300dp"
+            android:layout_height="68dp"
+            android:layout_marginTop="557dp"
+            android:layout_marginStart="30dp"
+            android:hint=""
+            android:textAlignment="center"
+            android:textSize="20sp"
+            android:onClick="onClick"
+            android:clickable="true"
+            android:background="@drawable/contenedor"
+            android:padding="10dp"/>
+
+    </androidx.cardview.widget.CardView>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Desarrollado por"
+        android:layout_marginTop="804dp"
+        android:layout_marginStart="30dp"
+        android:layout_centerHorizontal="true"
+        android:fontFamily="@font/inter"
+        android:textSize="15sp"
+        />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Sumy Development Studio"
+        android:layout_marginTop="822dp"
+        android:layout_marginStart="30dp"
+        android:layout_centerHorizontal="true"
+        android:fontFamily="@font/krubregular"
+        android:textSize="15sp" />
+
+</RelativeLayout>

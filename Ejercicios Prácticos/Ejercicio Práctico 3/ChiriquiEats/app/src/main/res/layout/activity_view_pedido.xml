@@ -1,0 +1,253 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/ce_background"
+    android:fillViewport="true"
+    tools:theme="@style/Theme.ChiriquiEats">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="20dp">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Detalles del pedido"
+            android:textColor="@color/ce_text"
+            android:textSize="24sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="18dp"
+            android:text="Pedido"
+            android:textColor="@color/ce_green"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Código del pedido:"
+            android:textColor="@color/ce_text"
+            android:layout_marginTop="18dp"
+            android:paddingStart="6dp" />
+
+        <TextView
+            android:id="@+id/text_view_codigo_pedido"
+            style="@style/ReadOnlyValue"
+            android:hint="Código de pedido" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Fecha:"
+            android:textColor="@color/ce_text"
+            android:layout_marginTop="12dp"
+            android:paddingStart="6dp" />
+
+        <TextView
+            android:id="@+id/text_view_fecha_pedido"
+            style="@style/ReadOnlyValue"
+            android:hint="Fecha" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Empresa:"
+            android:textColor="@color/ce_text"
+            android:layout_marginTop="12dp"
+            android:paddingStart="6dp" />
+
+        <TextView
+            android:id="@+id/text_view_empresa_pedido"
+            style="@style/ReadOnlyValue"
+            android:hint="Empresa" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Menú:"
+            android:textColor="@color/ce_text"
+            android:layout_marginTop="12dp"
+            android:paddingStart="6dp" />
+
+        <TextView
+            android:id="@+id/text_view_menu_pedido"
+            style="@style/ReadOnlyValue"
+            android:hint="Menú" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Contenido:"
+            android:textColor="@color/ce_text"
+            android:layout_marginTop="12dp"
+            android:paddingStart="6dp" />
+
+        <TextView
+            android:id="@+id/text_view_contenido_menu_pedido"
+            style="@style/ReadOnlyValueLarge"
+            android:hint="Contenido del menú" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Precio:"
+            android:textColor="@color/ce_text"
+            android:layout_marginTop="12dp"
+            android:paddingStart="6dp" />
+
+        <TextView
+            android:id="@+id/text_view_precio_menu_pedido"
+            style="@style/ReadOnlyValue"
+            android:hint="Precio del menú" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Cliente:"
+            android:textColor="@color/ce_text"
+            android:layout_marginTop="12dp"
+            android:paddingStart="6dp" />
+
+        <TextView
+            android:id="@+id/text_view_cliente_pedido"
+            style="@style/ReadOnlyValue"
+            android:hint="Cliente" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Dirección de envío:"
+            android:textColor="@color/ce_text"
+            android:layout_marginTop="12dp"
+            android:paddingStart="6dp" />
+
+        <TextView
+            android:id="@+id/text_view_direccion_pedido"
+            style="@style/ReadOnlyValue"
+            android:hint="Dirección de envío" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Monto de envío:"
+            android:textColor="@color/ce_text"
+            android:layout_marginTop="12dp"
+            android:paddingStart="6dp" />
+
+        <TextView
+            android:id="@+id/text_view_monto_envio_pedido"
+            style="@style/ReadOnlyValue"
+            android:hint="Monto de envío" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="18dp"
+            android:text="Pago"
+            android:textColor="@color/ce_green"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Código Yappy:"
+            android:textColor="@color/ce_text"
+            android:layout_marginTop="18dp"
+            android:paddingStart="6dp" />
+
+        <TextView
+            android:id="@+id/text_view_codigo_pago"
+            style="@style/ReadOnlyValue"
+            android:hint="Código de pago" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Número origen:"
+            android:textColor="@color/ce_text"
+            android:layout_marginTop="12dp"
+            android:paddingStart="6dp" />
+
+        <TextView
+            android:id="@+id/text_view_numero_origen_pago"
+            style="@style/ReadOnlyValue"
+            android:hint="Número de origen" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Número destino:"
+            android:textColor="@color/ce_text"
+            android:layout_marginTop="12dp"
+            android:paddingStart="6dp" />
+
+        <TextView
+            android:id="@+id/text_view_numero_destino_pago"
+            style="@style/ReadOnlyValue"
+            android:hint="Número de destino" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Monto total:"
+            android:textColor="@color/ce_text"
+            android:layout_marginTop="12dp"
+            android:paddingStart="6dp" />
+
+        <TextView
+            android:id="@+id/text_view_monto_pago"
+            style="@style/ReadOnlyValue"
+            android:hint="Monto" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Captura:"
+            android:textColor="@color/ce_text"
+            android:layout_marginTop="12dp"
+            android:paddingStart="6dp" />
+
+        <ImageView
+            android:id="@+id/image_view_captura_pago"
+            android:background="@drawable/bg_input"
+            android:layout_height="480dp"
+            android:layout_width="match_parent"
+            android:gravity="center_vertical"
+            android:paddingTop="14dp"
+            android:paddingBottom="14dp"
+            android:hint="Captura" />
+
+        <Button
+            android:id="@+id/button_enviarJSON"
+            android:layout_width="match_parent"
+            android:layout_height="54dp"
+            android:layout_marginTop="22dp"
+            android:backgroundTint="@color/ce_green"
+            android:text="Enviar JSON por correo"
+            android:textAllCaps="false"
+            android:textColor="@android:color/white"
+            android:textSize="16sp"
+            android:textStyle="bold" />
+
+        <Button
+            android:id="@+id/button_accept_view_pedido"
+            android:layout_width="match_parent"
+            android:layout_height="54dp"
+            android:layout_marginTop="0dp"
+            android:backgroundTint="@color/ce_green"
+            android:text="Aceptar"
+            android:textAllCaps="false"
+            android:textColor="@android:color/white"
+            android:textSize="16sp"
+            android:textStyle="bold" />
+    </LinearLayout>
+</ScrollView>

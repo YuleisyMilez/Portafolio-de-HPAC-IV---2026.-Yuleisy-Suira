@@ -1,0 +1,9 @@
+<resources>
+    <color name="ce_green">#0F8B57</color>
+    <color name="ce_green_dark">#09613E</color>
+    <color name="ce_orange">#F26A21</color>
+    <color name="ce_background">#F7F9F6</color>
+    <color name="ce_surface">#FFFFFF</color>
+    <color name="ce_text">#1E2A24</color>
+    <color name="ce_muted">#66736D</color>
+</resources>
