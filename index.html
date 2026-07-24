@@ -1,0 +1,543 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Portafolio de Materia</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600;700&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg: #F5FFFC;
+    --bg-panel: #FFFFFF;
+    --bg-panel-2: #fdf2ec;
+    --line: #D1FAE5;
+    --line-soft: #F0FDF4;
+    --text: #284B3E;
+    --text-dim: #586a75;
+    --copper: #14B8A6;
+    --copper-soft: #CCFBF1;
+    --signal: #10B981;
+    --signal-soft: #eefad1;
+    --radius: 12px;
+    --transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;
+    background: var(--bg);
+    color: var(--text);
+    font-family:'IBM Plex Sans', sans-serif;
+    -webkit-font-smoothing:antialiased;
+    min-height: 100vh;
+  }
+  .mono{font-family:'IBM Plex Mono', monospace;}
+
+  /* Enhanced high-tech background */
+  body::before{
+    content:"";
+    position:fixed; inset:0;
+    background-image: 
+      radial-gradient(circle at 50% 50%, transparent 0%, var(--bg) 85%),
+      linear-gradient(var(--line-soft) 1px, transparent 1px),
+      linear-gradient(90deg, var(--line-soft) 1px, transparent 1px);
+    background-size: 100% 100%, 48px 48px, 48px 48px;
+    opacity:0.6;
+    pointer-events:none;
+    z-index:0;
+  }
+  
+  /* Focal glow overlay */
+  body::after {
+    content: "";
+    position: fixed;
+    top: -10%; left: -10%;
+    width: 40%; height: 40%;
+    background: radial-gradient(circle, rgba(85, 214, 192, 0.05) 0%, transparent 70%);
+    pointer-events: none;
+    z-index: 0;
+    filter: blur(60px);
+  }
+
+  header{
+    position:relative; z-index:1;
+    max-width:1080px; margin:0 auto;
+    padding: 72px 24px 48px;
+    border-bottom:1px solid var(--line);
+  }
+  .chip-label{
+    display:inline-flex; align-items:center; gap:8px;
+    font-family:'IBM Plex Mono', monospace;
+    font-size:11px; letter-spacing:0.15em;
+    text-transform:uppercase;
+    color: var(--signal);
+    background: var(--signal-soft);
+    border:1px solid rgba(85, 255, 214, 0.3);
+    padding:6px 14px;
+    border-radius:999px;
+    margin-bottom:24px;
+    box-shadow: 0 0 15px rgba(85, 255, 214, 0.15);
+    transition: var(--transition);
+  }
+  .chip-label::before{
+    content:"";
+    width:6px; height:6px; border-radius:50%;
+    background: var(--signal);
+    box-shadow:0 0 10px var(--signal);
+  }
+  h1.course-title{
+    font-family:'IBM Plex Mono', monospace;
+    font-weight:700;
+    font-size: clamp(32px, 5vw, 52px);
+    line-height:1.1;
+    margin:0 0 32px;
+    letter-spacing:-0.02em;
+    text-shadow: 0 4px 12px rgba(0,0,0,0.3);
+  }
+  .meta-row{
+    display:flex; flex-wrap:wrap; gap:16px;
+  }
+  .meta-card{
+    display:flex; flex-direction:column; gap:6px;
+    background: var(--bg-panel);
+    backdrop-filter: blur(8px);
+    border:1px solid var(--line);
+    border-radius: var(--radius);
+    padding:16px 20px;
+    min-width:180px;
+    transition: var(--transition);
+  }
+  .meta-card:hover {
+    border-color: rgba(177, 22, 22, 0.2);
+    transform: translateY(-2px);
+  }
+  .meta-card .k{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:10px; letter-spacing:0.12em; text-transform:uppercase;
+    color: var(--text-dim);
+  }
+  .meta-card .v{
+    font-size:16px; font-weight:600;
+  }
+
+  main{
+    position:relative; z-index:1;
+    max-width:1080px; margin:0 auto;
+    padding: 48px 24px 100px;
+  }
+
+  nav.section-nav{
+    display:flex; flex-wrap:wrap; gap:12px;
+    margin-bottom:60px;
+    position:sticky; top:24px; z-index:10;
+  }
+  nav.section-nav a{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:13px;
+    color: var(--text-dim);
+    text-decoration:none;
+    background: #66e2accc;
+    backdrop-filter: blur(12px);
+    border:1px solid var(--line);
+    padding:10px 18px;
+    border-radius:10px;
+    transition: var(--transition);
+  }
+  nav.section-nav a:hover{
+    color: var(--text);
+    border-color: var(--copper);
+    background: var(--copper-soft);
+    box-shadow: 0 0 15px rgba(255, 138, 76, 0.15);
+  }
+
+  section.module{
+    margin-bottom:84px;
+    scroll-margin-top:100px;
+  }
+  .module-head{
+    display:flex; align-items:center; gap:16px;
+    margin-bottom:12px;
+    border-bottom:1px solid var(--line);
+    padding-bottom:18px;
+  }
+  .module-addr{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:12px;
+    color: var(--copper);
+    background: var(--copper-soft);
+    border:1px solid rgba(255, 138, 76, 0.35);
+    padding:4px 10px;
+    border-radius:6px;
+    box-shadow: 0 0 10px rgba(255, 138, 76, 0.1);
+  }
+  .module-head h2{
+    font-family:'IBM Plex Mono', monospace;
+    font-size: clamp(22px, 3vw, 30px);
+    margin:0;
+    font-weight:700;
+    letter-spacing: -0.01em;
+  }
+  .module-desc{
+    color: var(--text-dim);
+    font-size:15px;
+    line-height: 1.6;
+    margin: 8px 0 32px;
+  }
+
+  .division{
+    margin-bottom:32px;
+    background: var(--bg-panel);
+    backdrop-filter: blur(8px);
+    border:1px solid var(--line);
+    border-radius: var(--radius);
+    overflow:hidden;
+    transition: var(--transition);
+  }
+  .division:hover {
+    border-color: rgba(12, 78, 232, 0.3);
+  }
+  .division-head{
+    display:flex; align-items:center; justify-content:space-between;
+    gap:12px;
+    padding:16px 20px;
+    background: var(--bg-panel-2);
+    border-bottom:1px solid var(--line);
+  }
+  .division-head .title{
+    display:flex; align-items:center; gap:12px;
+  }
+  .division-head h3{
+    margin:0;
+    font-size:15px;
+    font-weight:600;
+    font-family:'IBM Plex Mono', monospace;
+    color: var(--text);
+  }
+
+  .cells{
+    display:grid;
+    grid-template-columns: repeat(var(--cols, 3), 1fr);
+    gap:1px;
+    background: var(--line);
+  }
+  @media (max-width: 800px){
+    .cells{ grid-template-columns: repeat(2, 1fr); }
+  }
+  @media (max-width: 540px){
+    .cells{ grid-template-columns: 1fr; }
+  }
+  .cell{
+    background: var(--bg-panel);
+    padding:20px;
+    display:flex; flex-direction:column; gap:12px;
+    min-height:140px;
+    transition: var(--transition);
+  }
+  .cell:hover {
+    background: rgba(255, 204, 128, 0.4);
+    transform: translateY(-4px);
+    z-index: 2;
+    border-radius: 4px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+    outline: 1px solid var(--copper);
+  }
+  .cell .cell-title{
+    font-size:15px;
+    font-weight:600;
+    line-height:1.4;
+    color: var(--text);
+  }
+  .cell .links{
+    margin-top:auto;
+    display:flex; gap:10px; flex-wrap:wrap;
+  }
+  .link-btn{
+    display:inline-flex; align-items:center; gap:8px;
+    font-family:'IBM Plex Mono', monospace;
+    font-size:12px;
+    text-decoration:none;
+    padding:8px 12px;
+    border-radius:8px;
+    border:1px solid var(--line);
+    color: var(--text-dim);
+    transition: var(--transition);
+  }
+  .link-btn.active{
+    color: var(--text);
+    border-color: rgba(85, 255, 214, 0.3);
+    background: var(--signal-soft);
+  }
+  .link-btn.active:hover{
+    border-color: var(--signal);
+    background: rgba(85, 255, 214, 0.15);
+    box-shadow: 0 0 12px rgba(85, 255, 214, 0.25);
+    transform: scale(1.03);
+  }
+  .link-btn.empty{
+    cursor:not-allowed;
+    opacity:0.3;
+    filter: grayscale(1);
+  }
+  .link-btn svg{ width:14px; height:14px; flex:none; }
+
+  footer{
+    position:relative; z-index:1;
+    max-width:1080px; margin:0 auto;
+    padding: 40px 24px 80px;
+    color: var(--text-dim);
+    font-size:12.5px;
+    font-family:'IBM Plex Mono', monospace;
+    border-top:1px solid var(--line);
+    text-align: center;
+    letter-spacing: 0.05em;
+  }
+
+  a:focus-visible, button:focus-visible{
+    outline:2px solid var(--signal);
+    outline-offset:4px;
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="chip-label">Portafolio académico</div>
+  <h1 class="course-title" id="courseTitle">Nombre de la materia</h1>
+  <div class="meta-row">
+    <div class="meta-card">
+      <span class="k">Profesor</span>
+      <span class="v" id="courseProf">—</span>
+    </div>
+    <div class="meta-card">
+      <span class="k">Año</span>
+      <span class="v" id="courseYear">—</span>
+    </div>
+    <div class="meta-card">
+      <span class="k">Estudiante</span>
+      <span class="v" id="courseTeam">—</span>
+    </div>
+    <div class="meta-card">
+      <span class="k">Cédula</span>
+      <span class="v" id="studentID">—</span>
+    </div>
+    <div class="meta-card">
+      <span class="k">Grupo</span>
+      <span class="v" id="courseGroup">—</span>
+    </div>
+  </div>
+</header>
+
+<main>
+  <nav class="section-nav" id="sectionNav"></nav>
+  <div id="sectionsContainer"></div>
+</main>
+
+<footer>
+  © <span>2026</span> — Hecho por Yuleisy Suira 4-825-692
+</footer>
+
+<script>
+/* =====================================================================
+   SITE_DATA — Editen únicamente esta sección para agregar su contenido.
+   Cada subdivisión acepta:
+     - nombre: texto que describe el contenido
+     - github: URL del repositorio (o cadena vacía "" si no hay)
+     - pdf: ruta o URL al PDF (o cadena vacía "" si no hay)
+
+   Para "subir" un PDF en un sitio estático de GitHub Pages: coloquen el
+   archivo dentro del repositorio (por ejemplo en una carpeta /pdfs) y
+   escriban aquí la ruta relativa, por ejemplo: "pdfs/taller1.pdf".
+   ===================================================================== */
+
+const SITE_DATA = {
+  materia: "Herramientas de Programación Aplicada IV",
+  profesor: "Napoleón Ibarra",
+  anio: new Date().getFullYear(),
+  integrantes: ["Yuleisy Suira"],
+  grupo: "2IL-141",
+  cedula: "4-825-692",
+
+secciones: [
+    {
+      id: "talleres",
+      nombre: "Talleres Prácticos",
+      //descripcion: "Ejercicios guiados realizados durante las sesiones de taller.",
+      divisiones: [
+        {
+          nombre: "Taller 01 - Primer proyecto en Cisco Packet Tracer",
+          subdivisiones: [
+            { nombre: "Documento entregable", github: "", pdf: "Taller Práctico 1/Taller Práctico1 - Yuleisy Suira.pdf" },
+            { nombre: "Diagrama de conexión de red hecho en Cisco Packet Tracer", github: "https://github.com/YuleisyMilez/Portafolio-de-HPAC-IV---2026.-Yuleisy-Suira/blob/main/Talleres%20Prácticos/Taller%20Práctico%201/Taller%20Práctico%201.pkt", pdf: "" }
+          ]
+        },
+        {
+          nombre: "Taller 02 - App Colegio Belén",
+          subdivisiones: [
+            { nombre: "Documento entregable", github: "", pdf: "Taller Práctico 2/Taller Práctico 2 - Desarrollo App Movil. Yuleisy Suira.pdf" },
+            { nombre: "Carpeta del proyecto hecho en Android Studio", github: "https://github.com/YuleisyMilez/Portafolio-de-HPAC-IV---2026.-Yuleisy-Suira/tree/main/Talleres%20Prácticos/Taller%20Práctico%202/TallerPractico2", pdf: "" },
+            { nombre: "Archivo .xlsx de la facturación", github: "https://github.com/YuleisyMilez/Portafolio-de-HPAC-IV---2026.-Yuleisy-Suira/blob/main/Talleres%20Prácticos/Taller%20Práctico%202/Facturación.xlsx", pdf: "" }
+          ]
+        }
+      ]
+    },
+    {
+      id: "investigaciones",
+      nombre: "Investigaciones",
+      //descripcion: "Trabajos de investigación teórica y documentación técnica.",
+      divisiones: [
+        {
+          nombre: "Investigación 01 - Glosario Ilustrado",
+          subdivisiones: [
+            { nombre: "Documento entregable", github: "", pdf: "Investigaciones/Investigación 1 - Yuleisy Suira.pdf" }
+          ]
+        },
+        {
+          nombre: "Investigación 02 - Manejo de eventos en Android Studio",
+          subdivisiones: [
+            { nombre: "Documento entregable", github: "", pdf: "Investigaciones/Investigación 2 - Yuleisy S, Axel C..pdf" }
+          ]
+        }
+      ]
+    },
+    {
+      id: "ejercicios",
+      nombre: "Ejercicios Prácticos",
+      //descripcion: "Ejercicios individuales de aplicación de los temas del curso.",
+      divisiones: [
+        {
+          nombre: "Ejercicio 01 - App Sucesos y Más",
+          subdivisiones: [
+            { nombre: "Documento entregable", github: "", pdf: "Ejercicio Práctico 1/Ejercicio Práctico 1 - Yuleisy Suira.pdf" },
+            { nombre: "Diagrama de conexión de red hecho en Cisco Packet Tracer", github: "https://github.com/YuleisyMilez/Portafolio-de-HPAC-IV---2026.-Yuleisy-Suira/blob/main/Ejercicios%20Prácticos/Ejercicio%20Práctico%201/EjercicioPractico1.pkt", pdf: "" },
+            { nombre: "Carpeta del proyecto hecho en Android Studio", github: "https://github.com/YuleisyMilez/Portafolio-de-HPAC-IV---2026.-Yuleisy-Suira/tree/main/Ejercicios%20Prácticos/Ejercicio%20Práctico%201/EjercicioPractico", pdf: "" }
+          ]
+        },
+        {
+          nombre: "Ejercicio 02 - App MOBIL BOTICA",
+          subdivisiones: [
+            { nombre: "Documento entregable", github: "", pdf: "Ejercicio Práctico 2/EjercicioPráctico2 - Yuleisy Suira.pdf" },
+            { nombre: "Diagrama de conexión de red hecho en Cisco Packet Tracer", github: "https://github.com/YuleisyMilez/Portafolio-de-HPAC-IV---2026.-Yuleisy-Suira/blob/main/Ejercicios%20Prácticos/Ejercicio%20Práctico%202/Ejercicio%20Práctico%202.pkt", pdf: "" }
+          ]
+        },
+        {
+          nombre: "Ejercicio 03 - App Chiriquí Eats S.A.",
+          subdivisiones: [
+            { nombre: "Documento entregable", github: "", pdf: "Ejercicio Práctico 3/Ejercicio práctico 3 - Yuleisy, Axel.pdf" },
+            { nombre: "Diagrama de conexión de red hecho en Cisco Packet Tracer", github: "https://github.com/YuleisyMilez/Portafolio-de-HPAC-IV---2026.-Yuleisy-Suira/blob/main/Ejercicios%20Prácticos/Ejercicio%20Práctico%203/Ejercicio%20práctico%203.1%20-%20HPA%20IV.pkt", pdf: "" },
+            { nombre: "Carpeta del proyecto hecho en Android Studio", github: "https://github.com/YuleisyMilez/Portafolio-de-HPAC-IV---2026.-Yuleisy-Suira/tree/main/Ejercicios%20Prácticos/Ejercicio%20Práctico%203", pdf: "" }
+          ]
+        }
+      ]
+    },
+    {
+      id: "parciales",
+      nombre: "Parciales",
+      //descripcion: "Evaluaciones parciales y sus entregables asociados.",
+      divisiones: [
+        {
+          nombre: "Parcial 01 - App para prestigiosa Universidad de la Provincia",
+          subdivisiones: [
+            { nombre: "Documento entregable", github: "", pdf: "Parcial 1/Examen Parcial 1 - Yuleisy Suira.pdf" },
+            { nombre: "Diagrama de conexión de red hecho en Cisco Packet Tracer", github: "https://github.com/YuleisyMilez/Portafolio-de-HPAC-IV---2026.-Yuleisy-Suira/blob/main/Parciales/Parcial%201/Parcial%201.pkt", pdf: "" }
+          ]
+        },
+        {
+          nombre: "Parcial 02 - App CHINOS CAFÉ S.A.",
+          subdivisiones: [
+            { nombre: "Documento entregable", github: "", pdf: "Parcial 2/Parcial 2 - Axel, Yuleisy.pdf" },
+            { nombre: "Diagrama de conexión de red hecho en Cisco Packet Tracer", github: "https://github.com/YuleisyMilez/Portafolio-de-HPAC-IV---2026.-Yuleisy-Suira/blob/main/Parciales/Parcial%202/Parcial%202%20-%20HPA%20IV.pkt", pdf: "" },
+            { nombre: "Carpeta del proyecto hecho en Android Studio", github: "https://github.com/YuleisyMilez/Portafolio-de-HPAC-IV---2026.-Yuleisy-Suira/tree/main/Parciales/Parcial%202/Parcial2", pdf: "" }
+          ]
+        }
+      ]
+    }
+  ]
+};
+
+/* =====================================================================
+   Motor de renderizado — no es necesario editar debajo de esta línea.
+   ===================================================================== */
+
+const ICONS = {
+  github: `<svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 .5C5.73.5.98 5.24.98 11.52c0 5.02 3.26 9.28 7.78 10.78.57.1.78-.25.78-.55v-2.14c-3.16.69-3.83-1.36-3.83-1.36-.52-1.32-1.27-1.67-1.27-1.67-1.04-.71.08-.7.08-.7 1.15.08 1.75 1.18 1.75 1.18 1.02 1.75 2.68 1.25 3.33.96.1-.74.4-1.25.72-1.54-2.52-.29-5.17-1.26-5.17-5.6 0-1.24.44-2.25 1.17-3.04-.12-.29-.51-1.45.11-3.02 0 0 .96-.31 3.15 1.16a10.9 10.9 0 0 1 5.74 0c2.18-1.47 3.14-1.16 3.14-1.16.63 1.57.23 2.73.12 3.02.73.79 1.17 1.8 1.17 3.04 0 4.35-2.66 5.31-5.19 5.59.41.35.77 1.04.77 2.11v3.13c0 .3.21.66.79.55 4.52-1.5 7.77-5.76 7.77-10.78C23.02 5.24 18.27.5 12 .5z"/></svg>`,
+  pdf: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M6 2h9l5 5v13a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2z"/><path d="M15 2v5h5"/><path d="M8.5 13.5h1.2c.7 0 1.3.6 1.3 1.3s-.6 1.3-1.3 1.3H8.5v-2.6zM8.5 13.5V17M13 13.5v3.5M13 15h1.4M17 13.5v3.5"/></svg>`
+};
+
+function esc(str){
+  const d = document.createElement('div');
+  d.textContent = str ?? "";
+  return d.innerHTML;
+}
+
+function renderHeader(){
+  document.getElementById('courseTitle').textContent = SITE_DATA.materia || "Nombre de la materia";
+  document.getElementById('courseProf').textContent = SITE_DATA.profesor || "—";
+  document.getElementById('courseYear').textContent = SITE_DATA.anio || new Date().getFullYear();
+  document.getElementById('courseTeam').textContent = (SITE_DATA.integrantes || []).join(", ") || "—";
+  document.getElementById('studentID').textContent = SITE_DATA.cedula || "—";
+  document.getElementById('courseGroup').textContent = SITE_DATA.grupo || "—";
+  document.title = `Portafolio — ${SITE_DATA.materia || "Materia"}`;
+}
+ 
+function linkButton(type, url){
+  const hasLink = !!(url && url.trim());
+  const label = type === "github" ? "Repositorio" : "PDF";
+  if (!hasLink){
+    return `<span class="link-btn empty">${ICONS[type]}${label}</span>`;
+  }
+  return `<a class="link-btn active" href="${esc(url)}" target="_blank" rel="noopener noreferrer">${ICONS[type]}${label}</a>`;
+}
+ 
+function renderSections(){
+  const nav = document.getElementById('sectionNav');
+  const container = document.getElementById('sectionsContainer');
+  nav.innerHTML = "";
+  container.innerHTML = "";
+ 
+  SITE_DATA.secciones.forEach((seccion, sIdx) => {
+    nav.innerHTML += `<a href="#${seccion.id}">${esc(seccion.nombre)}</a>`;
+ 
+    let divisionsHtml = "";
+ 
+    (seccion.divisiones || []).forEach((division, dIdx) => {
+      let cellsHtml = "";
+      (division.subdivisiones || []).forEach((sub, cIdx) => {
+        cellsHtml += `
+          <div class="cell">
+            <span class="cell-title">${esc(sub.nombre)}</span>
+            <div class="links">
+              ${linkButton("github", sub.github)}
+              ${linkButton("pdf", sub.pdf)}
+            </div>
+          </div>`;
+      });
+ 
+      divisionsHtml += `
+        <div class="division">
+          <div class="division-head">
+            <div class="title">
+              <h3>${esc(division.nombre)}</h3>
+            </div>
+          </div>
+          <div class="cells">${cellsHtml}</div>
+        </div>`;
+    });
+ 
+    container.innerHTML += `
+      <section class="module" id="${seccion.id}">
+        <div class="module-head">
+          <h2>${esc(seccion.nombre)}</h2>
+        </div>
+        <p class="module-desc">${esc(seccion.descripcion || "")}</p>
+        ${divisionsHtml}
+      </section>`;
+  });
+}
+
+renderHeader();
+renderSections();
+</script>
+</body>
+</html>
